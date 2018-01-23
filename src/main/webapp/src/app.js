@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('todoApp', ['ngRoute'])
+    angular.module('BookApp', ['ngRoute'])
         .config(Config);
 
     Config.$inject = ['$routeProvider', '$locationProvider'];
@@ -12,13 +12,13 @@
         $routeProvider
             .when('/',
             {
-                templateUrl: 'src/pages/todo/list/list.html',
-                controller: 'TodoListCtrl'
+                templateUrl: 'src/pages/book/list/list.html',
+                controller: 'BookListCtrl'
             })
-            .when('/todoDetail/:todoId',
+            .when('/bookDetail/:bookId',
                 {
-                    templateUrl: 'src/pages/todo/details/detail.html',
-                    controller: 'TodoDetailCtrl'
+                    templateUrl: 'src/pages/book/details/detail.html',
+                    controller: 'BookDetailCtrl'
                 })
             .otherwise({redirectTo: '/'});
     }

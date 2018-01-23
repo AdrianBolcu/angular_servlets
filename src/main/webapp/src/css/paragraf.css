@@ -1,0 +1,12 @@
+
+thead, tbody { display: block; }
+
+.table tbody{
+height: 300px;       /* Just for the demo          */
+width: 2500px;
+overflow-y: auto;    /* Trigger vertical scroll    */
+overflow-x: hidden;  /
+}
+.table thead{
+position: fixed;
+}

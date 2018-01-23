@@ -1,0 +1,41 @@
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Book List</h3>
+    </div>
+    <div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books">
+                    <td><a href="#/bookDetail/{{book.id}}">{{book.id}}</a></td>
+                    <td><a href="#/bookDetail/{{book.id}}">{{book.name}}</a></td>
+                    <td><a href="#/bookDetail/{{book.id}}">{{book.author}}</a></td>
+                    <td><a href="#/bookDetail/{{book.id}}">{{book.type}}</a></td>
+                    <td><a href="#/deleteBook/{{book.id}}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div>
+        <table >
+            <tr><td>Id: </td><td><input type="text" ng-model="data.id"></td></tr>
+            <tr><td>Name: </td><td><input type="text" ng-model="data.name"></td></tr>
+            <tr><td>Author: </td><td><input type="text" ng-model="data.author"></td></tr>
+            <tr><td>Type: <td><input type="text" ng-model="data.type"></td></tr>
+        </table>
+        <button ng-click="addBook()">Add</button>
+    </div>
+</div>

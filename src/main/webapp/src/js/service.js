@@ -2,22 +2,26 @@
 
     'use strict';
 
-    angular.module("todoApp")
-        .service("TodoService", TodoService);
+    angular.module("BookApp")
+        .service("BookService", BookService);
 
-    TodoService.$inject = ['$http'];
+    BookService.$inject = ['$http'];
 
-    function TodoService($http) {
+    function BookService($http) {
         return {
             list: function () {
-                return $http.get('todos');
+                return $http.get('books');
             },
 
             get: function (id) {
                 var requestConfig = {
                     params: {id: id}
                 };
-                return $http.get('todos', requestConfig);
+                return $http.get('books', requestConfig);
+            },
+
+            post: function (data) {
+                return $http.post('books', data, null);
             }
 
         };
