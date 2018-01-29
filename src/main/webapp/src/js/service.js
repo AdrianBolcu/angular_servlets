@@ -22,6 +22,17 @@
 
             post: function (data) {
                 return $http.post('books', data, null);
+            },
+
+            put: function (data) {
+                return $http.put('books', data, null);
+            },
+
+            deleteBook: function(id) {
+                   var requestConfig = {
+                       params: {id: id}
+                   };
+                   return $http.delete('books' , requestConfig);
             }
 
         };

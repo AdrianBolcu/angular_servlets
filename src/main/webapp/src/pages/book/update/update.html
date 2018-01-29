@@ -1,0 +1,19 @@
+<div class="panel panel-info">
+  <div class="panel-heading">{{book.name}}</div>
+  <div class="panel-body">
+        <p id='bookAuthor'>Author : {{book.author}}</p>
+        <p id='bookType'>Type : {{book.type}}</p>
+        <a id='goBackLink' href='/#/'>Back to list</a>
+  </div>
+</div>
+
+<div>
+    <table >
+        <tr><td>Id: </td><td><input type="text" ng-model="data.id"></td></tr>
+        <tr><td>Name: </td><td><input type="text" ng-model="data.name"></td></tr>
+        <tr><td>Author: </td><td><input type="text" ng-model="data.author"></td></tr>
+        <tr><td>Type: <td><input type="text" ng-model="data.type"></td></tr>
+    </table>
+    <button ng-click="updateBook()">Update</button>
+</div>
+</div>

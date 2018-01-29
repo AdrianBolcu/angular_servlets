@@ -135,14 +135,14 @@ public class BookDao {
     public int updateBook( Book book){
         int status = 0;
         try{
-            String sql = "UPDATE todo SET name=?,owner=?,priority=? WHERE id=?;";
+            String sql = "UPDATE book SET name=?,author=?,type=? WHERE id=?;";
             connect();
             PreparedStatement statement = jdbcConnection.prepareStatement(sql);
 
-            statement.setInt(1,book.getId());
-            statement.setString(2,book.getName());
-            statement.setString(3,book.getAuthor());
-            statement.setString(4,book.getType());
+            statement.setInt(4,book.getId());
+            statement.setString(1,book.getName());
+            statement.setString(2,book.getAuthor());
+            statement.setString(3,book.getType());
             status = statement.executeUpdate();
             statement.close();
             disconnect();
@@ -154,7 +154,7 @@ public class BookDao {
 
     public static int delete(int id)  {
         int status = 0;
-        String sql = "DELETE from todo where id=?";
+        String sql = "DELETE from book where id=?";
         try {
             connect();
             PreparedStatement statement = jdbcConnection.prepareStatement(sql);

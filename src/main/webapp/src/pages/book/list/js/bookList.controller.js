@@ -5,9 +5,10 @@
     angular.module("BookApp")
         .controller("BookListCtrl", BookListCtrl);
 
-    BookListCtrl.$inject = ['$scope', 'BookService'];
 
-    function BookListCtrl($scope, BookService) {
+    BookListCtrl.$inject = ['$scope', '$routeParams', 'BookService'];
+
+    function BookListCtrl($scope, routeParams,  BookService) {
         BookService.list()
             .then(function (res) {
                 $scope.books = res.data;
@@ -34,23 +35,14 @@
                 });
         }
 
-
         $scope.deleteBook = function() {
-                    BookService.delete($scope.data)
-                        .then(function (res) {
-                            alert(res.data);
-
-                            BookService.list()
-                                .then(function (res) {
-                                    $scope.books = res.data;
-                                }, function () {
-                                    $scope.books = [];
-                                });
-
-                        }, function () {
-                            alert(res.data);
-                        });
-                }
+               BookService.deleteBook($routeParams.bookId)
+                   .then(function (res) {
+                       $scope.books = res.data;
+                   }, function () {
+                       $scope.books = {};
+                   });
+           }
 
 
 

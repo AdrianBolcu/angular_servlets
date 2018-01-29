@@ -8,7 +8,7 @@ package ro.mindit.book.util;
  */
 public class Constants {
     public static final String jdbcDriver = "org.postgresql.Driver";
-    public static final String jdbcURL = "jdbc:postgresql://localhost:8082/postgreDB";
+    public static final String jdbcURL = "jdbc:postgresql://localhost:5432/postgres";
     public static final String jdbcUsername = "postgres";
     public static final String jdbcPassword = "password";
 }
