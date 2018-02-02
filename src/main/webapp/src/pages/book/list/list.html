@@ -21,9 +21,7 @@
                     <td><a href="#/bookDetail/{{book.id}}">{{book.name}}</a></td>
                     <td><a href="#/bookDetail/{{book.id}}">{{book.author}}</a></td>
                     <td><a href="#/bookDetail/{{book.id}}">{{book.type}}</a></td>
-                    <td><input type="button" value="Delete" ng-click="deleteBook()"/></td>
-                    <td><a href="#/deleteBook/{{book.id}}">Update</a></td>
-                    <td><a href="#/deleteCompany/{{company.id}}">Delete</a></td>
+                    <td><button ng-click="deleteBook($index)">Delete</button></td>
                 </tr>
             </tbody>
         </table>

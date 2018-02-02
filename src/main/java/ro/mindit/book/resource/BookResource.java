@@ -155,7 +155,6 @@ public class BookResource extends HttpServlet {
 
             if(status>0){
                 out.print("<p>Record updated successfully!</p>");
-              //  request.getRequestDispatcher("index.html").include(request, response);
             }else{
                 out.println("Sorry! unable to update record");
             }

@@ -28,7 +28,7 @@
                 return $http.put('books', data, null);
             },
 
-            deleteBook: function(id) {
+            delete: function(id) {
                    var requestConfig = {
                        params: {id: id}
                    };

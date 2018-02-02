@@ -35,14 +35,18 @@
                 });
         }
 
-        $scope.deleteBook = function() {
-               BookService.deleteBook($routeParams.bookId)
-                   .then(function (res) {
-                       $scope.books = res.data;
-                   }, function () {
-                       $scope.books = {};
-                   });
-           }
+           $scope.deleteBook = function(index){
+                    var id = $scope.books[index].id;
+                    BookService.delete(id)
+                    .then(function(res){
+                        BookService.list()
+                            .then(function (res) {
+                                $scope.books = res.data;
+                            }, function () {
+                                $scope.books = [];
+                            });
+                    });
+                };
 
 
 

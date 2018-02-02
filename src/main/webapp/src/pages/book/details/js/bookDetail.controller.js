@@ -14,6 +14,25 @@
             }, function () {
                 $scope.book = {};
             });
+
+             $scope.update = function(){
+                            BookService.put($scope.book)
+                                .then(function(res){
+                                    BookService.list()
+                                        .then(function (res) {
+                                            $scope.books = res.data;
+                                        }, function () {
+                                            $scope.books = [];
+                                        });
+                                }),
+                                function () {
+                                   alert(res.data);
+                                };
+                        };
     }
+
+
+
+
 
 })();

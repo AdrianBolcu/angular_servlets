@@ -146,6 +146,8 @@ public class BookDao {
             status = statement.executeUpdate();
             statement.close();
             disconnect();
+
+            System.out.println("Successfully updated " + book);
         } catch (SQLException e) {
             e.printStackTrace();
         }
